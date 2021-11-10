@@ -36,3 +36,41 @@
     transform: rotate(360deg);
   }
 }
+footer {
+  text-align: center;
+  padding: 3px;
+  background-color: rgb(29 53 87);;
+  color: white;
+  margin-top: 50px;
+  position: fixed;
+  width: 100%;
+  bottom: 10px;
+}
+footer a{
+  text-decoration: none;
+}
+nav,#navbarToggleExternalContent{
+  background-color: rgb(168 218 220);
+}
+
+.Jumbotron{
+  margin-top: 50px;
+  background-color:rgb(69 123 157);
+  height: 200px;
+  color: #ffff;
+  font-size: 3rem;
+}
+h2{
+  color: black;
+  margin:  10px;
+}
+h1{
+  text-align: center;
+}
+.card{
+  width:13.5%;
+
+}
+.navbar-toggler  {
+  background-color:rgb(178 228 220) ;
+}
