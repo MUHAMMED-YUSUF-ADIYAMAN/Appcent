@@ -2,10 +2,6 @@ import React, {useEffect, useState} from 'react';
 import Movie from "./Movie";
 
 const Home = (props) =>{
-    const {
-        title, poster_path, overview, releaseDate, original_title,
-        vote_average, status, budget, release_date
-    } = props;
 
     return (
         <div className="row">
