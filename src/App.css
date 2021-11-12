@@ -63,6 +63,7 @@ nav,#navbarToggleExternalContent{
 h2{
   color: black;
   margin:  10px;
+  text-align: start;
 }
 h1{
   text-align: center;

@@ -1,7 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import Movie from "./Movie";
 
 const Home = (props) =>{
+
 
     return (
         <div className="row">
@@ -18,9 +19,9 @@ const Home = (props) =>{
                     <h2>Popular Movies</h2>
                     <div className="row d-flex justify-content-evenly">
                         {
-                            props.movies.map((movie,i) => {
+                            props.movies.slice(1,8).map((movie,i) => {
                                 return(
-                                    <Movie key={i} image={movie.poster_path} title={movie.original_title} vote={movie.vote_average} date={movie.release_date}/>
+                                    <Movie key={i} image={movie.known_for[0].poster_path} title={movie.known_for[0].original_title || movie.known_for[0].name} vote={movie.known_for[0].vote_average} date={movie.known_for[0].release_date}/>
                                 )
                             })
                         }
@@ -32,10 +33,9 @@ const Home = (props) =>{
                     <h2>Popular Movies</h2>
                     <div className="row d-flex justify-content-evenly">
                         {
-                            props.movies.map((movie,i) => {
+                            props.movies.slice(9,16).map((movie,i) => {
                                 return(
-                                    <Movie key={i} image={movie.poster_path} title={movie.original_title} vote={movie.vote_average} date={movie.release_date}/>
-
+                                    <Movie key={i} image={movie.known_for[0].poster_path} title={movie.known_for[0].original_title || movie.known_for[0].name} vote={movie.known_for[0].vote_average} date={movie.known_for[0].release_date || movie.known_for[0].first_air_date}/>
                                 )
                             })
                         }

@@ -5,38 +5,38 @@ import Nav from "./Nav";
 import Home from "./Home";
 
 class App extends Component{
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state={
       movies:[{
-          key:"{i}" ,
-          image:"{movie.poster_path}",
-          title:"{movie.original_title}",
-          vote:"{movie.vote_average}" ,
-          date:"{movie.release_date}"
       }],
       a:1
     }
     this.apiKey="1335239b0b917f23ccc8492fb3fecd4f";//Normalde .env dosyasına konmalı
   }
-  handleSubmit = (e) => {
+
+  handleSubmit = () => {
 
     fetch(`https://api.themoviedb.org/3/person/popular?api_key=${this.apiKey}&page=1`)
         .then(data =>data.json())
         .then(data=>{
-          console.log(data);
-          this.setState({movies:[...data.results],
-              a:this.state.a+1}
-          );
+           if (this.state.movies.length<15) {
+               console.log(data);
+               this.setState({movies:[...data.results],
+                   a:this.state.a+1}
+               );
+           }
         })
-
+      return(
+          this.state.movies
+      )
 }
 
   render() {
     return(
         <div className="App">
           <Nav/>
-          <Home handleSubmit={this.handleSubmit()}/>
+          <Home movies={this.handleSubmit()}/>
         </div>
     )
   }
